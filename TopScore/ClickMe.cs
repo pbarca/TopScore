@@ -6,16 +6,29 @@ namespace TopScore
 {
     class ClickMe
     {
-        private int _tempo;
-        public void Mover(Button sender)
+        private bool _start = true;
+
+        public bool Start => _start;
+        public void Move(object sender)
         {
-            Random x = new Random();
-            Point pt = new Point(int.Parse(x.Next(500).ToString()), int.Parse(x.Next(250).ToString()) + 100);
-            sender.Location = pt;
+            Random _r = new Random();
+            int _x = int.Parse(_r.Next(500).ToString());
+            int _y = int.Parse(_r.Next(250).ToString()) + 100;
+            Point _pt = new Point(_x, _y);
+            Button _b = (Button)sender;
+            _b.Location = _pt;
         }
-        public string Tempo()
+        public bool Tempo(object sender)
         {
-            return _tempo.ToString();
+            TextBox _t = (TextBox)sender;
+            int _tempo = Convert.ToInt32(_t.Text);
+            if (_tempo > 0)
+            {
+                _tempo--;
+                _t.Text = _tempo.ToString();
+                return false;
+            }
+            else return true;
         }
     }
 }

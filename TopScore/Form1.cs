@@ -38,20 +38,13 @@ namespace TopScore
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            int _tempo = Convert.ToInt32(tempo.Text);
-            if (_tempo < 1) Stop();
-            else
-            {
-                _tempo--;
-                Classe.Mover(clickme);
-            }
-            tempo.Text = _tempo.ToString();
+            if (Classe.Tempo(tempo)) Stop();
         }
 
         private void clickme_Click(object sender, EventArgs e)
         {
             pontos.Text = (Convert.ToInt32(pontos.Text) + 1).ToString();
-            Classe.Mover(clickme);
+            Classe.Move(sender);
         }
     }
 }
