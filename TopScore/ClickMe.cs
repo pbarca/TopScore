@@ -9,6 +9,7 @@ namespace TopScore
         private bool _start = true;
 
         public bool Start => _start;
+
         public void Move(object sender)
         {
             Random _r = new Random();
@@ -18,6 +19,7 @@ namespace TopScore
             Button _b = (Button)sender;
             _b.Location = _pt;
         }
+                          
         public bool Tempo(object sender)
         {
             TextBox _t = (TextBox)sender;
@@ -29,6 +31,20 @@ namespace TopScore
                 return false;
             }
             else return true;
+        }
+
+        public void Pontos(object sender)
+        {
+            TextBox _t = (TextBox)sender;
+            _t.Text = (Convert.ToInt32(_t.Text) + 1).ToString(); 
+        }
+
+        public void Record(object pontos, object record)
+        {
+            TextBox _pontos = (TextBox)pontos;
+            TextBox _record = (TextBox)record;
+            if (Convert.ToInt32(_record.Text) < Convert.ToInt32(_pontos.Text))
+                _record.Text = _pontos.Text;
         }
     }
 }

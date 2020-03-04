@@ -13,6 +13,7 @@ namespace TopScore
         }
 
         private ClickMe Classe = new ClickMe();
+
         private void Start()
         {
             button2.Text = "STOP";
@@ -27,8 +28,7 @@ namespace TopScore
             button2.Text = "GO!";
             clickme.Visible = false;
             timer1.Stop();
-            if (Convert.ToInt32(record.Text) < Convert.ToInt32(pontos.Text))
-                record.Text = pontos.Text;
+            Classe.Record(pontos,record);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace TopScore
 
         private void clickme_Click(object sender, EventArgs e)
         {
-            pontos.Text = (Convert.ToInt32(pontos.Text) + 1).ToString();
+            Classe.Pontos(pontos);
             Classe.Move(sender);
         }
     }
