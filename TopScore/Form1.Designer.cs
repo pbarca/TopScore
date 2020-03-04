@@ -80,7 +80,6 @@
             this.label1.Size = new System.Drawing.Size(127, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Record";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // record
             // 

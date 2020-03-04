@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace TopScore
@@ -10,13 +9,10 @@ namespace TopScore
         {
             InitializeComponent();
             clickme.Visible = false;
+            timer1.Interval = 1000;
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        private ClickMe Classe = new ClickMe();
         private void Start()
         {
             button2.Text = "STOP";
@@ -35,12 +31,6 @@ namespace TopScore
                 record.Text = pontos.Text;
         }
 
-        private void Mover()
-        {
-            Random x = new Random();
-            Point pt = new Point(int.Parse(x.Next(500).ToString()), int.Parse(x.Next(250).ToString()) + 100);
-            clickme.Location = pt;
-        }
         private void Button2_Click(object sender, EventArgs e)
         {
             if (button2.Text == "GO!") Start(); else Stop();
@@ -48,21 +38,20 @@ namespace TopScore
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = 1000;
             int _tempo = Convert.ToInt32(tempo.Text);
             if (_tempo < 1) Stop();
             else
             {
                 _tempo--;
-                Mover();
+                Classe.Mover(clickme);
             }
             tempo.Text = _tempo.ToString();
         }
 
         private void clickme_Click(object sender, EventArgs e)
         {
-            pontos.Text = (Convert.ToInt32(pontos.Text) +1).ToString();
-            Mover();
+            pontos.Text = (Convert.ToInt32(pontos.Text) + 1).ToString();
+            Classe.Mover(clickme);
         }
     }
 }
