@@ -34,6 +34,13 @@ namespace TopScore
             if (Convert.ToInt32(record.Text) < Convert.ToInt32(pontos.Text))
                 record.Text = pontos.Text;
         }
+
+        private void Mover()
+        {
+            Random x = new Random();
+            Point pt = new Point(int.Parse(x.Next(500).ToString()), int.Parse(x.Next(250).ToString()) + 100);
+            clickme.Location = pt;
+        }
         private void Button2_Click(object sender, EventArgs e)
         {
             if (button2.Text == "GO!") Start(); else Stop();
@@ -43,16 +50,19 @@ namespace TopScore
         {
             timer1.Interval = 1000;
             int _tempo = Convert.ToInt32(tempo.Text);
-            if (_tempo < 1) Stop(); else _tempo--;
+            if (_tempo < 1) Stop();
+            else
+            {
+                _tempo--;
+                Mover();
+            }
             tempo.Text = _tempo.ToString();
         }
 
         private void clickme_Click(object sender, EventArgs e)
         {
             pontos.Text = (Convert.ToInt32(pontos.Text) +1).ToString();
-            Random x = new Random();
-            Point pt = new Point(int.Parse(x.Next(500).ToString()),int.Parse(x.Next(250).ToString()) + 100);
-            clickme.Location = pt;
+            Mover();
         }
     }
 }
