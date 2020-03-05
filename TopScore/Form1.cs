@@ -10,6 +10,7 @@ namespace TopScore
             InitializeComponent();
             clickme.Visible = false;
             timer1.Interval = 1000;
+            record.Text = Classe.Abrir;
         }
 
         private ClickMe Classe = new ClickMe();

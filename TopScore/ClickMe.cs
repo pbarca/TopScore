@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace TopScore
 {
     class ClickMe
     {
-        private bool _start = true;
-
-        public bool Start => _start;
+        private string _path = Application.StartupPath + "\\Resources\\Record.txt";
+        public string Abrir => File.ReadAllText(_path);
+        public void Gravar(string valor) => File.WriteAllText(_path, valor);
 
         public void Move(object sender)
         {
@@ -46,7 +47,11 @@ namespace TopScore
             TextBox _record = (TextBox)record;
             int _max = Convert.ToInt32(_record.Text);
             int _pts = Convert.ToInt32(_pontos.Text);
-            if (_max < _pts) _record.Text = _pontos.Text;
+            if (_max < _pts)
+            {
+                _record.Text = _pontos.Text;
+                this.Gravar(_record.Text);
+            }
         }
     }
 }
