@@ -19,7 +19,7 @@ namespace TopScore
             Button _b = (Button)sender;
             _b.Location = _pt;
         }
-                          
+
         public bool Tempo(object sender)
         {
             TextBox _t = (TextBox)sender;
@@ -36,15 +36,17 @@ namespace TopScore
         public void Pontos(object sender)
         {
             TextBox _t = (TextBox)sender;
-            _t.Text = (Convert.ToInt32(_t.Text) + 1).ToString(); 
+            int _pts = Convert.ToInt32(_t.Text) + 1;
+            _t.Text = _pts.ToString();
         }
 
         public void Record(object pontos, object record)
         {
             TextBox _pontos = (TextBox)pontos;
             TextBox _record = (TextBox)record;
-            if (Convert.ToInt32(_record.Text) < Convert.ToInt32(_pontos.Text))
-                _record.Text = _pontos.Text;
+            int _max = Convert.ToInt32(_record.Text);
+            int _pts = Convert.ToInt32(_pontos.Text);
+            if (_max < _pts) _record.Text = _pontos.Text;
         }
     }
 }
