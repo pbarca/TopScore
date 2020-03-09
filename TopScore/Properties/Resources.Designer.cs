@@ -63,9 +63,29 @@ namespace TopScore.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2019_nCoV_CDC_23312_without_background {
+            get {
+                object obj = ResourceManager.GetObject("2019-nCoV-CDC-23312_without_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap d31345678632460cb3b9b3f1eb82d509 {
             get {
                 object obj = ResourceManager.GetObject("d31345678632460cb3b9b3f1eb82d509", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Escola_Maximinos {
+            get {
+                object obj = ResourceManager.GetObject("Escola_Maximinos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -77,15 +97,6 @@ namespace TopScore.Properties {
             get {
                 object obj = ResourceManager.GetObject("fly_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 0.
-        /// </summary>
-        internal static string Record {
-            get {
-                return ResourceManager.GetString("Record", resourceCulture);
             }
         }
     }

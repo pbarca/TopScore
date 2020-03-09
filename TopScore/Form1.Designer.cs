@@ -43,7 +43,7 @@
             // clickme
             // 
             this.clickme.BackColor = System.Drawing.Color.Transparent;
-            this.clickme.BackgroundImage = global::TopScore.Properties.Resources.fly_2;
+            this.clickme.BackgroundImage = global::TopScore.Properties.Resources._2019_nCoV_CDC_23312_without_background;
             this.clickme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.clickme.FlatAppearance.BorderSize = 0;
             this.clickme.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -139,8 +139,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TopScore.Properties.Resources.d31345678632460cb3b9b3f1eb82d509;
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.BackgroundImage = global::TopScore.Properties.Resources.Escola_Maximinos;
+            this.ClientSize = new System.Drawing.Size(795, 529);
             this.Controls.Add(this.tempo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pontos);

@@ -88,9 +88,10 @@
     <None Include="Resources\fly_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Record.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="Resources\2019-nCoV-CDC-23312_without_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Escola_Maximinos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

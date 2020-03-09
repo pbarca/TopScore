@@ -8,7 +8,12 @@ namespace TopScore
     class ClickMe
     {
         private string _path = Application.StartupPath + "\\Resources\\Record.txt";
-        public string Abrir => File.ReadAllText(_path);
+        public string Abrir()
+        {
+            if (!File.Exists(_path)) this.Gravar("0");
+            return File.ReadAllText(_path);
+        }
+
         public void Gravar(string valor) => File.WriteAllText(_path, valor);
 
         public void Move(object sender)
